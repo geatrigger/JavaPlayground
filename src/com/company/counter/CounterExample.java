@@ -26,7 +26,7 @@ public class CounterExample implements Runnable {
     @Override
     public void run() {
         for (int i = 0; i < 20000; i++) {
-            System.out.println(Thread.currentThread().getName() + " Value: " + counter.increment() + "\n");
+            System.out.print(Thread.currentThread().getName() + " Value: " + counter.increment() + "\n");
         }
     }
 }
