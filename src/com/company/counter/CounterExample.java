@@ -1,4 +1,4 @@
-package com.company;
+package com.company.counter;
 
 public class CounterExample implements Runnable {
     private final Counter counter;
