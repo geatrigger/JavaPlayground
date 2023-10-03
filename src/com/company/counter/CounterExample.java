@@ -1,7 +1,11 @@
 package com.company.counter;
 
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
+
 public class CounterExample implements Runnable {
     private final Counter counter;
+    private Logger logger = LoggerFactory.getLogger(CounterExample.class);
 
     public static void main(String[] args) {
         Counter counter = new Counter();
@@ -21,8 +25,8 @@ public class CounterExample implements Runnable {
 
     @Override
     public void run() {
-        for (int i = 0; i < 20; i++) {
-            System.out.println(Thread.currentThread().getName() + " Value: " + counter.increment());
+        for (int i = 0; i < 20000; i++) {
+            logger.warn(Thread.currentThread().getName() + " Value: " + counter.increment() + "\n");
         }
     }
 }
